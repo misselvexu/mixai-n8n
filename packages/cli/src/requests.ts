@@ -144,6 +144,7 @@ export declare namespace CredentialRequest {
 		type: string;
 		data: ICredentialDataDecryptedObject;
 		projectId?: string;
+		isManaged?: boolean;
 	}>;
 
 	type Create = AuthenticatedRequest<{}, {}, CredentialProperties>;
@@ -585,4 +586,5 @@ export declare namespace AiAssistantRequest {
 	type SuggestionPayload = { sessionId: string; suggestionId: string };
 	type ApplySuggestionPayload = AuthenticatedRequest<{}, {}, SuggestionPayload>;
 	type AskAiPayload = AuthenticatedRequest<{}, {}, AiAssistantSDK.AskAiRequestPayload>;
+	type FreeAiCreditsPayload = AuthenticatedRequest<{}, {}, { projectId: string }>;
 }
